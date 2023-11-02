@@ -19,6 +19,7 @@ export default function endgame_shelter(pos, square) {
             }
         }
     }
+    
     if (square == null) return e;
     return 0;
 }
