@@ -7,7 +7,7 @@ import sum from "../global/sum";
 
 
 export default function passed_eg(pos, square) {
-    if (square == null) return sum(pos, passed_eg);
+    if (square === null) return sum(pos, passed_eg);
     if (!passed_leverable(pos, square)) return 0;
     let v = 0;
     v += king_proximity(pos, square);

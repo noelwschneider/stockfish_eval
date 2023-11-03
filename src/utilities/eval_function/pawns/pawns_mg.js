@@ -10,7 +10,7 @@ import weak_unopposed_pawn from "./weak_unopposed_pawn";
 
 
 export default function pawns_mg(pos, square) {
-    if (square == null) return sum(pos, pawns_mg);
+    if (square === null) return sum(pos, pawns_mg);
     let v = 0;
     if (doubled_isolated(pos, square)) v -= 11;
     else if (isolated(pos, square)) v -= 5;

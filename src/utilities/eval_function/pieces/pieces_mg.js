@@ -16,7 +16,7 @@ import queen_infiltration from "./queen_infiltration";
 
 
 export default function pieces_mg(pos, square) {
-    if (square == null) return sum(pos, pieces_mg);
+    if (square === null) return sum(pos, pieces_mg);
     if ("NBRQ".indexOf(board(pos, square.x, square.y)) < 0) return 0;
     let v = 0;
     v += [0,31,-7,30,56][outpost_total(pos, square)];
@@ -30,7 +30,7 @@ export default function pieces_mg(pos, square) {
     v -= trapped_rook(pos, square) * 55 * (pos.castleRights[0] || pos.castleRights[1] ? 1 : 2);
     v -= 56 * weak_queen(pos, square);
     v -= 2 * queen_infiltration(pos, square);
-    v -= (board(pos, square.x, square.y) == "N" ? 8 : 6) * king_protector(pos, square);
+    v -= (board(pos, square.x, square.y) === "N" ? 8 : 6) * king_protector(pos, square);
     v += 45 * long_diagonal_bishop(pos, square);
     return v;
   }

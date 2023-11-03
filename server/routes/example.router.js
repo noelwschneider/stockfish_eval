@@ -5,8 +5,8 @@ const pool = require('../modules/pool')
 // GET Route
 router.get('/', (req, res) => {
     const queryText = `
-        SELECT * FROM "example_table"
-        ORDER BY "number" DESC, "id" ASC
+        SELECT * FROM "example"
+        ORDER BY "integer" DESC, "id" ASC
         `
     
     pool.query(queryText)

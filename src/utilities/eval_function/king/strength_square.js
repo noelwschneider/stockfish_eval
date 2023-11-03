@@ -2,8 +2,8 @@ import board from "../global/board";
 import sum from "../global/sum";
 
 
-function strength_square(pos, square) {
-    if (square == null) return sum(pos, strength_square);
+export default function strength_square(pos, square) {
+    if (square === null) return sum(pos, strength_square);
     let v = 5;
     let kx = Math.min(6, Math.max(1, square.x));
     let weakness =
@@ -14,9 +14,9 @@ function strength_square(pos, square) {
     for (let x = kx - 1; x <= kx +1; x++) {
       let us = 0;
       for (let y = 7; y >= square.y; y--) {
-        if (board(pos, x, y) == "p"
-         && board(pos, x-1, y+1) != "P"
-         && board(pos, x+1, y+1) != "P") us = y;
+        if (board(pos, x, y) === "p"
+         && board(pos, x-1, y+1) !== "P"
+         && board(pos, x+1, y+1) !== "P") us = y;
       }
       let f = Math.min(x, 7 - x);
       v += weakness[f][us] || 0;

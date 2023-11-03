@@ -6,7 +6,7 @@ import sum from "../global/sum";
 
 
 export default function weak_squares(pos, square) {
-    if (square == null) {
+    if (square === null) {
         return sum(pos, weak_squares)
     };
     
@@ -14,7 +14,7 @@ export default function weak_squares(pos, square) {
       let pos2 = colorflip(pos);
       let attackCount = attack(pos2, {x:square.x,y:7-square.y});
       if (attackCount >= 2) return 0;
-      if (attackCount == 0) return 1;
+      if (attackCount === 0) return 1;
       if (king_attack(pos2, {x:square.x,y:7-square.y})
        || queen_attack(pos2, {x:square.x,y:7-square.y})) return 1;
     }

@@ -12,7 +12,7 @@ export default function main_evaluation(pos) {
 
     eg = eg * scale_factor(pos, eg) / 64;
     let value = (((mg * p + ((eg * (128 - p)) << 0)) / 128) << 0);
-    if (arguments.length == 1) value = ((value / 16) << 0) * 16;
+    if (arguments.length === 1) value = ((value / 16) << 0) * 16;
     value += tempo(pos);
     value = (value * (100 - rule50(pos)) / 100) << 0;
     return value;

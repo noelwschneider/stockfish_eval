@@ -8,7 +8,7 @@ import sum from "../global/sum";
 
 
 export default function mobility(pos, square) {
-    if (square == null) return sum(pos, mobility);
+    if (square === null) return sum(pos, mobility);
     let v = 0;  
     let b = board(pos, square.x, square.y);
     if ("NBRQ".indexOf(b) < 0) return 0;
@@ -16,10 +16,10 @@ export default function mobility(pos, square) {
       for(let y = 0; y < 8; y++) {
         let s2 = {x:x, y:y};
         if (!mobility_area(pos, s2)) continue;
-        if (b == "N" && knight_attack(pos, s2, square) && board(pos, x, y) != 'Q') v++;
-        if (b == "B" && bishop_xray_attack(pos, s2, square) && board(pos, x, y) != 'Q') v++;
-        if (b == "R" && rook_xray_attack(pos, s2, square)) v++;
-        if (b == "Q" && queen_attack(pos, s2, square)) v++;
+        if (b === "N" && knight_attack(pos, s2, square) && board(pos, x, y) !== 'Q') v++;
+        if (b === "B" && bishop_xray_attack(pos, s2, square) && board(pos, x, y) !== 'Q') v++;
+        if (b === "R" && rook_xray_attack(pos, s2, square)) v++;
+        if (b === "Q" && queen_attack(pos, s2, square)) v++;
       }
     }
     return v;

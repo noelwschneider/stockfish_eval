@@ -8,12 +8,12 @@ import sum from "../global/sum";
 
 
 export default function king_attackers_count(pos, square) {
-    if (square == null) return sum(pos, king_attackers_count);
+    if (square === null) return sum(pos, king_attackers_count);
     if ("PNBRQ".indexOf(board(pos, square.x, square.y)) < 0) return 0;
-    if (board(pos, square.x, square.y) == "P") {
+    if (board(pos, square.x, square.y) === "P") {
       let v = 0;
       for (let dir = -1; dir <= 1; dir += 2) {
-        let fr = board(pos, square.x + dir * 2, square.y) == "P";
+        let fr = board(pos, square.x + dir * 2, square.y) === "P";
         if (square.x + dir >= 0 && square.x + dir <= 7
          && king_ring(pos, {x:square.x+dir,y:square.y-1}, true)) v = v + (fr ? 0.5 : 1);
       }

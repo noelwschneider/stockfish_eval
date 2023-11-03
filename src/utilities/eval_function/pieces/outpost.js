@@ -4,9 +4,9 @@ import sum from "../global/sum";
 
 
 export default function outpost(pos, square) {
-    if (square == null) return sum(pos, outpost);
-    if (board(pos, square.x, square.y) != "N"
-     && board(pos, square.x, square.y) != "B") return 0;
+    if (square === null) return sum(pos, outpost);
+    if (board(pos, square.x, square.y) !== "N"
+     && board(pos, square.x, square.y) !== "B") return 0;
     if (!outpost_square(pos, square)) return 0;
     return 1;
   }

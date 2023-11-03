@@ -12,9 +12,9 @@ export default function endgame_shelter(pos, square) {
     for (let x = 0; x < 8; x++) {
         for (let y = 0; y < 8; y++) {
 
-            if (board(pos, x, y) == "k"
-                || pos.castleRights[2] && x == 6 && y == 0
-                || pos.castleRights[3] && x == 2 && y == 0) {
+            if (board(pos, x, y) === "k"
+                || pos.castleRights[2] && x === 6 && y === 0
+                || pos.castleRights[3] && x === 2 && y === 0) {
 
                 // king shelter strength
                 let w1 = strength_square(pos, { x: x, y: y });
@@ -32,7 +32,7 @@ export default function endgame_shelter(pos, square) {
             }
         }
     }
-    if (square == null) {
+    if (square === null) {
         return e
     };
 

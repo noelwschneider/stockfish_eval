@@ -3,7 +3,7 @@ import sum from "../global/sum";
 
 
 export default function pawn_count(pos, square) {
-    if (square == null) return sum(pos, pawn_count);
-    if (board(pos, square.x, square.y) == "P") return 1;
+    if (square === null) return sum(pos, pawn_count);
+    if (board(pos, square.x, square.y) === "P") return 1;
     return 0;
   }

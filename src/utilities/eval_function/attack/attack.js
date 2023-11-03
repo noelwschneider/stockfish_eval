@@ -9,13 +9,17 @@ import sum from "../global/sum";
 
 
 export default function attack(pos, square) {
-    if (square == null) return sum(pos, attack);
-    let v = 0;
-    v += pawn_attack(pos, square);
-    v += king_attack(pos, square);
-    v += knight_attack(pos, square);
-    v += bishop_xray_attack(pos, square);
-    v += rook_xray_attack(pos, square);
-    v += queen_attack(pos, square);
-    return v;
+    if (square === null) {
+        return sum(pos, attack)
+    };
+
+    let value = 0;
+    value += pawn_attack(pos, square);
+    value += king_attack(pos, square);
+    value += knight_attack(pos, square);
+    value += bishop_xray_attack(pos, square);
+    value += rook_xray_attack(pos, square);
+    value += queen_attack(pos, square);
+    
+    return value;
   }

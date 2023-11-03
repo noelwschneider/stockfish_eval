@@ -13,7 +13,7 @@ import sum from "../global/sum";
 
 
 export default function pieces_eg(pos, square) {
-    if (square == null) return sum(pos, pieces_eg);
+    if (square === null) return sum(pos, pieces_eg);
     if ("NBRQ".indexOf(board(pos, square.x, square.y)) < 0) return 0;
     let v = 0;
     v += [0,22,36,23,36][outpost_total(pos, square)];

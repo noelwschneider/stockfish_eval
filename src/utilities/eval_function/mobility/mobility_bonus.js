@@ -4,7 +4,7 @@ import sum from "../global/sum";
 
 
 export default function mobility_bonus(pos, square, mg) {
-    if (square == null) return sum(pos, mobility_bonus, mg);
+    if (square === null) return sum(pos, mobility_bonus, mg);
     let bonus = mg ? [
       [-62,-53,-12,-4,3,13,22,28,33],
       [-48,-20,16,26,38,51,55,63,63,68,81,81,91,98],

@@ -3,7 +3,7 @@ import sum from "../global/sum";
 
 
 export default function psqt_bonus(pos, square, mg) {
-    if (square == null) return sum(pos, psqt_bonus, mg);
+    if (square === null) return sum(pos, psqt_bonus, mg);
     let bonus = mg ? [
       [[-175,-92,-74,-73],[-77,-41,-27,-15],[-61,-17,6,12],[-35,8,40,49],[-34,13,44,51],[-9,22,58,53],[-67,-27,4,37],[-201,-83,-56,-26]],
       [[-53,-5,-8,-23],[-15,8,19,4],[-7,21,-5,17],[-5,11,25,39],[-12,29,22,31],[-16,6,1,11],[-17,-14,5,0],[-48,1,-14,-23]],
@@ -24,6 +24,6 @@ export default function psqt_bonus(pos, square, mg) {
        [28,20,21,28,30,7,6,13],[0,-11,12,21,25,19,4,7],[0,0,0,0,0,0,0,0]];
     let i = "PNBRQK".indexOf(board(pos, square.x, square.y));
     if (i < 0) return 0;
-    if (i == 0) return pbonus[7 - square.y][square.x];
+    if (i === 0) return pbonus[7 - square.y][square.x];
     else return bonus[i-1][7 - square.y][Math.min(square.x, 7 - square.x)];
   }

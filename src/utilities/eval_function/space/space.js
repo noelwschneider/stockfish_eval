@@ -10,8 +10,8 @@ export default function space(pos, square) {
     for (let x = 0; x < 8; x++) {
       for (let y = 0; y < 8; y++) {
         if ("PNBRQK".indexOf(board(pos, x, y)) >= 0) pieceCount++;
-        if (board(pos, x, y) == "P" && (board(pos, x, y - 1) == "p" || (board(pos, x - 1, y - 2) == "p" && board(pos, x + 1, y - 2) == "p"))) blockedCount++;
-        if (board(pos, x, y) == "p" && (board(pos, x, y + 1) == "P" || (board(pos, x - 1, y + 2) == "P" && board(pos, x + 1, y + 2) == "P"))) blockedCount++;
+        if (board(pos, x, y) === "P" && (board(pos, x, y - 1) === "p" || (board(pos, x - 1, y - 2) === "p" && board(pos, x + 1, y - 2) === "p"))) blockedCount++;
+        if (board(pos, x, y) === "p" && (board(pos, x, y + 1) === "P" || (board(pos, x - 1, y + 2) === "P" && board(pos, x + 1, y + 2) === "P"))) blockedCount++;
       }
     }
     let weight = pieceCount - 3 + Math.min(blockedCount, 9);
