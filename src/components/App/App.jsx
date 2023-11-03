@@ -1,12 +1,11 @@
 import './App.css';
 
-import TestComponent from './TestComponent';
-
+import Board from '../Board/Board';
 
 function App() {
   return (
     <div className="App">
-        <TestComponent />
+        <Board/>
     </div>
   );
 }

@@ -1,7 +1,14 @@
-// This should probably be a class
+export default function position (state = startingPosition, action) {
+    switch(action.type) {
+        case 'SET_POSITION':
+            return action.payload
+        default:
+            return state;
+    }
+}
 
-const pos = {
 
+const startingPosition = {
     // chessboard
     board: [["r", "p", "-", "-", "-", "-", "P", "R"],
     ["n", "p", "-", "-", "-", "-", "P", "N"],
