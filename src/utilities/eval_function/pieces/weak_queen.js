@@ -3,7 +3,7 @@ import sum from "../global/sum";
 
 
 export default function weak_queen(pos, square) {
-    if (square === null) return sum(pos, weak_queen);
+    if (!square) return sum(pos, weak_queen);
     if (board(pos, square.x, square.y) !== "Q") return 0;
     for (let i = 0; i < 8; i++) {
       let ix = (i + (i > 3)) % 3 - 1;

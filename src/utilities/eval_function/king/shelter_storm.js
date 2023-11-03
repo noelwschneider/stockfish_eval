@@ -15,7 +15,7 @@ export default function shelter_storm(pos, square) {
         }
       }
     }
-    if (square === null) return s;
+    if (!square) return s;
     if (tx !== null && board(pos, square.x, square.y).toUpperCase() === "P" && square.x >= tx-1 && square.x <= tx+1) {
       for (let y = square.y-1; y >= 0; y--) if (board(pos, square.x, y) === board(pos, square.x, square.y)) return 0;
       return 1;

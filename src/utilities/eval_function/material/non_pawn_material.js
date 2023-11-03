@@ -4,7 +4,7 @@ import sum from "../global/sum";
 
 
 export default function non_pawn_material(pos, square) {
-    if (square === null) return sum(pos, non_pawn_material);
+    if (!square) return sum(pos, non_pawn_material);
     let i = "NBRQ".indexOf(board(pos, square.x, square.y));
     if (i >= 0) return piece_value_bonus(pos, square, true);
     return 0;

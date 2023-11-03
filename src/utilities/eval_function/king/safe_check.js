@@ -8,7 +8,7 @@ import weak_squares from "./weak_squares";
 
 
 export default function safe_check(pos, square, type) {
-    if (square === null) return sum(pos, safe_check, type);
+    if (!square) return sum(pos, safe_check, type);
     if ("PNBRQK".indexOf(board(pos, square.x, square.y)) >= 0) return 0;
     if (!check(pos, square, type)) return 0;
     let pos2 = colorflip(pos);

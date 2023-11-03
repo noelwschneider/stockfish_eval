@@ -32,7 +32,7 @@ export default function endgame_shelter(pos, square) {
             }
         }
     }
-    if (square === null) {
+    if (!square) {
         return e
     };
 

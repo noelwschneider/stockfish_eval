@@ -4,7 +4,7 @@ import sum from "../global/sum";
 
 
 export default function knight_defender(pos, square) {
-    if (square === null) return sum(pos, knight_defender);
+    if (!square) return sum(pos, knight_defender);
     if (knight_attack(pos, square) && king_attack(pos, square)) return 1;
     return 0;
   }

@@ -3,7 +3,7 @@ import sum from "../global/sum";
 
 
 export default function king_ring(pos, square, full) {
-    if (square === null) return sum(pos, king_ring);
+    if (!square) return sum(pos, king_ring);
     
     if (!full
         && board(pos, square.x + 1, square.y - 1) === "p"

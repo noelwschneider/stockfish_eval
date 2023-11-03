@@ -7,7 +7,7 @@ import sum from "../global/sum";
 
 
 export default function check(pos, square, type) {
-    if (square === null) return sum(pos, check);
+    if (!square) return sum(pos, check);
     if (rook_xray_attack(pos, square)
     && (type === null || type === 2 || type === 4)
      || queen_attack(pos, square)

@@ -8,7 +8,7 @@ import sum from "../global/sum";
 
 
 export default function knight_on_queen(pos, square) {
-    if (square === null) return sum(pos, knight_on_queen);
+    if (!square) return sum(pos, knight_on_queen);
     let pos2 = colorflip(pos);
     let qx = -1, qy = -1;
     for (let x = 0; x < 8; x++) {

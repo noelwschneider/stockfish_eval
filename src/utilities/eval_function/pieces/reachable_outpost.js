@@ -6,7 +6,7 @@ import sum from "../global/sum";
 
 
 export default function reachable_outpost(pos, square) {
-    if (square === null) return sum(pos, reachable_outpost);
+    if (!square) return sum(pos, reachable_outpost);
     if (board(pos, square.x, square.y) !== "B"
      && board(pos, square.x, square.y) !== "N") return 0;
     let v = 0;

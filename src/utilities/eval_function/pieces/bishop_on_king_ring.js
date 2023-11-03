@@ -5,7 +5,7 @@ import sum from "../global/sum";
 
 
 export default function bishop_on_king_ring(pos, square) {
-    if (square === null) return sum(pos, bishop_on_king_ring);
+    if (!square) return sum(pos, bishop_on_king_ring);
     if (board(pos, square.x, square.y) !== "B") return 0;
     if (king_attackers_count(pos, square) > 0) return 0;
     for (let i = 0; i < 4; i++) {

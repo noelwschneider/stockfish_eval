@@ -3,7 +3,7 @@ import sum from "../global/sum";
 
 
 export default function long_diagonal_bishop(pos, square) {
-    if (square === null) return sum(pos, long_diagonal_bishop);
+    if (!square) return sum(pos, long_diagonal_bishop);
     if (board(pos, square.x, square.y) !== "B") return 0;
     if (square.x - square.y !== 0 && square.x - (7 - square.y) !== 0) return 0;
     let x1 = square.x, y1 = square.y;

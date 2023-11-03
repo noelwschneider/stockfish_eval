@@ -5,7 +5,7 @@ import sum from "../global/sum";
 
 
 export default function restricted(pos, square) {
-    if (square === null) return sum(pos, restricted);
+    if (!square) return sum(pos, restricted);
     if (attack(pos, square) === 0) return 0;
     let pos2 = colorflip(pos);
     if (!attack(pos2, {x:square.x,y:7-square.y})) return 0;

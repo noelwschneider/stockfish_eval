@@ -4,10 +4,11 @@ export default function colorflip(pos) {
     for (let i = 0; i < 8; i++) {
         board[i] = new Array(8)
     };
+    board[0][0] = 0;
 
     for (let x = 0; x < 8; x++) {
         for (let y = 0; y < 8; y++) {
-            board[x][y] = pos.b[x][7 - y];
+            board[x][y] = pos.board[x][7 - y];
             let color = board[x][y].toUpperCase() === board[x][y];
             board[x][y] = color ? board[x][y].toLowerCase() : board[x][y].toUpperCase();
         }
@@ -24,7 +25,7 @@ export default function colorflip(pos) {
         ],
 
         enPassantCandidates:
-            pos.enPassantCandidates === null
+            !pos.enPassantCandidates
                 ? null
                 : [pos.enPassantCandidates[0], 7 - pos.enPassantCandidates[1]],
 

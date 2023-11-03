@@ -9,7 +9,7 @@ import sum from "../global/sum";
 
 
 export default function attack(pos, square) {
-    if (square === null) {
+    if (!square) {
         return sum(pos, attack)
     };
 

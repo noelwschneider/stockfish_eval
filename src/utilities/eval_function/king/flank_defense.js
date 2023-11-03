@@ -5,7 +5,7 @@ import sum from "../global/sum";
 
 
 export default function flank_defense(pos, square) {
-    if (square === null) return sum(pos, flank_defense);
+    if (!square) return sum(pos, flank_defense);
     if (square.y > 4) return 0;
     for (let x = 0; x < 8; x++) {
       for (let y = 0; y < 8; y++) {

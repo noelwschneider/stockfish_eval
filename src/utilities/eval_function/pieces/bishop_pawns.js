@@ -4,7 +4,7 @@ import sum from "../global/sum";
 
 
 export default function bishop_pawns(pos, square) {
-    if (square === null) return sum(pos, bishop_pawns);
+    if (!square) return sum(pos, bishop_pawns);
     if (board(pos, square.x, square.y) !== "B") return 0;
     let c = (square.x + square.y) % 2, v = 0;
     let blocked = 0;

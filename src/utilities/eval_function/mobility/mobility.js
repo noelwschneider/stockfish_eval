@@ -8,7 +8,7 @@ import sum from "../global/sum";
 
 
 export default function mobility(pos, square) {
-    if (square === null) return sum(pos, mobility);
+    if (!square) return sum(pos, mobility);
     let v = 0;  
     let b = board(pos, square.x, square.y);
     if ("NBRQ".indexOf(b) < 0) return 0;

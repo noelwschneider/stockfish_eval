@@ -3,7 +3,7 @@ import sum from "../global/sum";
 
 
 export default function bishop_xray_pawns(pos, square) {
-    if (square === null) return sum(pos, bishop_xray_pawns);
+    if (!square) return sum(pos, bishop_xray_pawns);
     if (board(pos, square.x, square.y) !== "B") return 0;
     let count = 0;
     for (let x = 0; x < 8; x++) {

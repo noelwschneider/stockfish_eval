@@ -6,7 +6,7 @@ import sum from "../global/sum";
 
 
 export default function weak_squares(pos, square) {
-    if (square === null) {
+    if (!square) {
         return sum(pos, weak_squares)
     };
     

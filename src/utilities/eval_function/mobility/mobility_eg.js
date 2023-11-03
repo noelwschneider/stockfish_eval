@@ -3,6 +3,6 @@ import sum from "../global/sum";
 
 
 export default function mobility_eg(pos, square) {
-    if (square === null) return sum(pos, mobility_eg);
+    if (!square) return sum(pos, mobility_eg);
     return mobility_bonus(pos, square, false);
   }

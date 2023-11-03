@@ -3,7 +3,7 @@ import sum from "../global/sum";
 
 
 export default function strength_square(pos, square) {
-    if (square === null) return sum(pos, strength_square);
+    if (!square) return sum(pos, strength_square);
     let v = 5;
     let kx = Math.min(6, Math.max(1, square.x));
     let weakness =

@@ -4,7 +4,7 @@ import sum from "../global/sum";
 
 
 export default function doubled_isolated(pos, square) {
-    if (square === null) return sum(pos, doubled_isolated);
+    if (!square) return sum(pos, doubled_isolated);
     if (board(pos, square.x, square.y) !== "P") return 0;
     if (isolated(pos, square)) {
       let obe=0,eop=0,ene=0;

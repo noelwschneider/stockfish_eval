@@ -11,7 +11,7 @@ import sum from "../global/sum";
 
 
 export default function slider_on_queen(pos, square) {
-    if (square === null) return sum(pos, slider_on_queen);
+    if (!square) return sum(pos, slider_on_queen);
     let pos2 = colorflip(pos);
     if (queen_count(pos2) !== 1) return 0;
     if (board(pos, square.x, square.y) === "P") return 0;

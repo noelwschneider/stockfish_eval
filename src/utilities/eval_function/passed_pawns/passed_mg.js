@@ -6,7 +6,7 @@ import sum from "../global/sum";
 
 
 export default function passed_mg(pos, square) {
-    if (square === null) return sum(pos, passed_mg);
+    if (!square) return sum(pos, passed_mg);
     if (!passed_leverable(pos, square)) return 0;
     let v = 0;
     v += [0,10,17,15,62,168,276][passed_rank(pos, square)];

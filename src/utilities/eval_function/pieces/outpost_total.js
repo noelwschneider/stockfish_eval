@@ -6,7 +6,7 @@ import sum from "../global/sum";
 
 
 export default function outpost_total(pos, square) {
-    if (square === null) return sum(pos, outpost_total);
+    if (!square) return sum(pos, outpost_total);
     if (board(pos, square.x, square.y) !== "N"
      && board(pos, square.x, square.y) !== "B") return 0;
     let knight = board(pos, square.x, square.y) === "N";

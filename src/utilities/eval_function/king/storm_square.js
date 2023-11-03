@@ -3,7 +3,7 @@ import sum from "../global/sum";
 
 
 export default function storm_square(pos, square, eg) {
-    if (square === null) return sum(pos, storm_square);
+    if (!square) return sum(pos, storm_square);
     let v = 0, ev = 5;
     let kx = Math.min(6, Math.max(1, square.x));
     let unblockedstorm = [

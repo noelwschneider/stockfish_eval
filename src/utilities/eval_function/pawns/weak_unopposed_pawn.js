@@ -5,7 +5,7 @@ import sum from "../global/sum";
 
 
 export default function weak_unopposed_pawn(pos, square) {
-    if (square === null) return sum(pos, weak_unopposed_pawn);
+    if (!square) return sum(pos, weak_unopposed_pawn);
     if (opposed(pos, square)) return 0;
     let v = 0;
     if (isolated(pos, square)) v++;

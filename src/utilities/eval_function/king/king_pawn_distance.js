@@ -17,6 +17,6 @@ export default function king_pawn_distance(pos, square) {
             if (board(pos, x, y) === "P" && dist < v) { px = x; py = y; v = dist; }
         }
     }
-    if (square === null || square.x === px && square.y === py) return v;
+    if (!square || square.x === px && square.y === py) return v;
     return 0;
 }

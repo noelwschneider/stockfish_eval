@@ -3,7 +3,7 @@ import sum from "../global/sum";
 
 
 export default function backward(pos, square) {
-    if (square === null) return sum(pos, backward);
+    if (!square) return sum(pos, backward);
     if (board(pos, square.x, square.y) !== "P") return 0;
     for (let y = square.y; y < 8; y++) {
       if (board(pos, square.x - 1, y) === "P"

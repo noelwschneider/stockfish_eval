@@ -6,7 +6,7 @@ import getRank from "../helpers/getRank";
 import getFile from "../helpers/getFile"
 
 export default function space_area(pos, square) {
-    if (square === null) {
+    if (!square) {
         return sum(pos, space_area);
     };
 

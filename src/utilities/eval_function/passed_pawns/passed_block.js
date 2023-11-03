@@ -6,7 +6,7 @@ import passed_leverable from "./passed_leverable";
 import sum from "../global/sum";
 
 export default function passed_block(pos, square) {
-    if (square === null) return sum(pos, passed_block);
+    if (!square) return sum(pos, passed_block);
     if (!passed_leverable(pos, square)) return 0;
     if (getRank(pos, square) < 4) return 0;
     if (board(pos, square.x, square.y - 1) !== "-") return 0;

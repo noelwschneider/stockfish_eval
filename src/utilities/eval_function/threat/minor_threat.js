@@ -8,7 +8,7 @@ import weak_enemies from "./weak_enemies";
 
 
 export default function minor_threat(pos, square) {
-    if (square === null) return sum(pos, minor_threat);
+    if (!square) return sum(pos, minor_threat);
     let type = "pnbrqk".indexOf(board(pos, square.x, square.y));
     if (type < 0) return 0;
     if (!knight_attack(pos, square) && !bishop_xray_attack(pos, square)) return 0;

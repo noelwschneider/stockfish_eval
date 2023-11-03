@@ -4,7 +4,7 @@ import getRank from "../helpers/getRank";
 import sum from "../global/sum";
 
 export default function king_proximity(pos, square) {
-    if (square === null) return sum(pos, king_proximity);
+    if (!square) return sum(pos, king_proximity);
     if (!passed_leverable(pos, square)) return 0;
     let r = getRank(pos, square)-1;
     let w = r > 2 ? 5 * r - 13 : 0;

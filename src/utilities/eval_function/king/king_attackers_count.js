@@ -8,7 +8,7 @@ import sum from "../global/sum";
 
 
 export default function king_attackers_count(pos, square) {
-    if (square === null) return sum(pos, king_attackers_count);
+    if (!square) return sum(pos, king_attackers_count);
     if ("PNBRQ".indexOf(board(pos, square.x, square.y)) < 0) return 0;
     if (board(pos, square.x, square.y) === "P") {
       let v = 0;

@@ -12,7 +12,7 @@ import weak_unopposed_pawn from "./weak_unopposed_pawn";
 
 
 export default function pawns_eg(pos, square) {
-    if (square === null) return sum(pos, pawns_eg);
+    if (!square) return sum(pos, pawns_eg);
     let v = 0;
     if (doubled_isolated(pos, square)) v -= 56;
     else if (isolated(pos, square)) v -= 15;

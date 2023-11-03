@@ -1,22 +1,24 @@
 import board from "../global/board";
+import strength_square from "./strength_square";
+import storm_square from "./storm_square";
 
-
-export default function king_pawn_distance(pos, square) {
-    let v = 6, kx = 0, ky = 0, px = 0, py = 0;
-    for (let x = 0; x < 8; x++) {
-        for (let y = 0; y < 8; y++) {
-            if (board(pos, x, y) === "K") {
-                kx = x;
-                ky = y;
-            }
+export default function shelter_strength(pos, square) {
+    var w = 0, s = 1024, tx = null;
+    for (var x = 0; x < 8; x++) {
+      for (var y = 0; y < 8; y++) {
+        if (board(pos, x, y) == "k"
+         || pos.castleRights[2] && x == 6 && y == 0
+         || pos.castleRights[3] && x == 2 && y == 0) {
+          var w1 = strength_square(pos, {x:x,y:y});
+          var s1 = storm_square(pos, {x:x,y:y});
+          if (s1 - w1 < s - w) { w = w1; s = s1; tx=Math.max(1,Math.min(6,x)); }
         }
+      }
     }
-    for (let x = 0; x < 8; x++) {
-        for (let y = 0; y < 8; y++) {
-            let dist = Math.max(Math.abs(x - kx), Math.abs(y - ky));
-            if (board(pos, x, y) === "P" && dist < v) { px = x; py = y; v = dist; }
-        }
+    if (square == null) return w;
+    if (tx != null && board(pos, square.x, square.y) == "p" && square.x >= tx-1 && square.x <= tx+1) {
+      for (var y = square.y-1; y >= 0; y--) if (board(pos, square.x, y) == "p") return 0;
+      return 1;
     }
-    if (square === null || square.x === px && square.y === py) return v;
     return 0;
-}
+  }

@@ -9,7 +9,7 @@ import sum from "../global/sum";
 
 
 export default function king_attacks(pos, square) {
-    if (square === null) return sum(pos, king_attacks);
+    if (!square) return sum(pos, king_attacks);
     if ("NBRQ".indexOf(board(pos, square.x, square.y)) < 0) return 0;
     if (king_attackers_count(pos, square) === 0) return 0;
     let kx = 0, ky = 0, v = 0;

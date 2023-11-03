@@ -6,12 +6,16 @@ import shelter_strength from "./shelter_strength";
 
 
 export default function king_mg(pos) {
-    let v = 0;
-    let kd = king_danger(pos);
-    v -= shelter_strength(pos);
-    v += shelter_storm(pos);
-    v += (kd * kd / 4096) << 0;
-    v += 8 * flank_attack(pos);
-    v += 17 * pawnless_flank(pos);
-    return v;
+    let value = 0;
+    let kingDanger = king_danger(pos);
+    console.log('king danger', kingDanger);
+
+    value -= shelter_strength(pos);
+    console.log('shelter strength:', shelter_strength(pos));
+    
+    value += shelter_storm(pos);
+    value += (kingDanger * kingDanger / 4096) << 0;
+    value += 8 * flank_attack(pos);
+    value += 17 * pawnless_flank(pos);
+    return value;
 }

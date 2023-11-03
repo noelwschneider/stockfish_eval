@@ -6,7 +6,7 @@ import sum from "../global/sum";
 
 
 export default function pawn_push_threat(pos, square) {
-    if (square === null) return sum(pos, pawn_push_threat);
+    if (!square) return sum(pos, pawn_push_threat);
     if ("pnbrqk".indexOf(board(pos, square.x, square.y)) < 0) return 0;
     for (let ix = -1; ix <= 1; ix += 2) {
       if (board(pos, square.x + ix, square.y + 2) === "P"

@@ -4,7 +4,7 @@ import supported from "../pawns/supported";
 
 
 export default function candidate_passed(pos, square) {
-    if (square === null) return sum(pos, candidate_passed);
+    if (!square) return sum(pos, candidate_passed);
     if (board(pos, square.x, square.y) !== "P") return 0;
     let ty1 = 8, ty2 = 8, oy = 8;
     for (let y = square.y - 1; y >= 0; y--) {

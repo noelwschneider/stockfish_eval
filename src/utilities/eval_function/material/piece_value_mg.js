@@ -3,6 +3,10 @@ import sum from "../global/sum";
 
 
 export default function piece_value_mg(pos, square) {
-    if (square === null) return sum(pos, piece_value_mg);
+
+    if (!square) {
+        return sum(pos, piece_value_mg);
+    };
+
     return piece_value_bonus(pos, square, true);
   }

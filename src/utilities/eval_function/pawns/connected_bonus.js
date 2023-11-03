@@ -8,7 +8,7 @@ import supported from "./supported";
 
 
 export default function connected_bonus(pos, square) {
-    if (square === null) return sum(pos, connected_bonus);
+    if (!square) return sum(pos, connected_bonus);
     if (!connected(pos, square)) return 0;
     let seed = [0, 7, 8, 12, 29, 48, 86];
     let op = opposed(pos, square);

@@ -5,7 +5,7 @@ import sum from "../global/sum";
 
 
 export default function trapped_rook(pos, square) {
-    if (square === null) return sum(pos, trapped_rook);
+    if (!square) return sum(pos, trapped_rook);
     if (board(pos, square.x, square.y) !== "R") return 0;
     if (rook_on_file(pos, square)) return 0;
     if (mobility(pos, square)> 3) return 0;

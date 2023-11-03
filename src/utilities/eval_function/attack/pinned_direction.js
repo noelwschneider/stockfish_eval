@@ -3,7 +3,7 @@ import sum from "../global/sum";
 
 
 export default function pinned_direction(pos, square) {
-    if (square === null) return sum(pos, pinned_direction);
+    if (!square) return sum(pos, pinned_direction);
     if ("PNBRQK".indexOf(board(pos, square.x, square.y).toUpperCase()) < 0) return 0;
     let color = 1;
     if ("PNBRQK".indexOf(board(pos, square.x, square.y)) < 0) color = -1;

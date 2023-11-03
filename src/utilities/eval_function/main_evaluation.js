@@ -10,6 +10,9 @@ export default function main_evaluation(pos) {
     let eg = end_game_evaluation(pos);
     let p = phase(pos)
 
+    console.log('mg:', mg);
+    console.log('eg:', eg);
+
     eg = eg * scale_factor(pos, eg) / 64;
     let value = (((mg * p + ((eg * (128 - p)) << 0)) / 128) << 0);
     if (arguments.length === 1) value = ((value / 16) << 0) * 16;

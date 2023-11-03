@@ -5,7 +5,7 @@ import colorflip from "../global/colorflip";
 import sum from "../global/sum";
 
 export default function passed_leverable(pos, square) {
-    if (square === null) return sum(pos, passed_leverable);
+    if (!square) return sum(pos, passed_leverable);
     if (!candidate_passed(pos, square)) return 0;
     if (board(pos, square.x, square.y - 1) !== "p") return 1;
     let pos2 = colorflip(pos);

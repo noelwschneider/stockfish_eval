@@ -16,7 +16,7 @@ import queen_infiltration from "./queen_infiltration";
 
 
 export default function pieces_mg(pos, square) {
-    if (square === null) return sum(pos, pieces_mg);
+    if (!square) return sum(pos, pieces_mg);
     if ("NBRQ".indexOf(board(pos, square.x, square.y)) < 0) return 0;
     let v = 0;
     v += [0,31,-7,30,56][outpost_total(pos, square)];

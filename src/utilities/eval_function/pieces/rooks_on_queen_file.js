@@ -3,7 +3,7 @@ import sum from "../global/sum";
 
 
 export default function rook_on_queen_file(pos, square) {
-    if (square === null) return sum(pos, rook_on_queen_file);
+    if (!square) return sum(pos, rook_on_queen_file);
     if (board(pos, square.x, square.y) !== "R") return 0;
     for (let y = 0; y < 8; y++) {
       if (board(pos, square.x, y).toUpperCase() === "Q") return 1;

@@ -5,7 +5,7 @@ import sum from "../global/sum";
 
 
 export default function pawn_attacks_span(pos, square) {
-    if (square === null) return sum(pos, pawn_attacks_span);
+    if (!square) return sum(pos, pawn_attacks_span);
     let pos2 = colorflip(pos);
     for (let y = 0; y < square.y; y++) {
       if (board(pos, square.x - 1, y) === "p"
