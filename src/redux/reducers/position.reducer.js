@@ -29,5 +29,7 @@ const startingPosition = {
     whiteToMove: true,
 
     // move counts
-    moveCounters: [0, 1]
+    moveCounters: [0, 1],
+
+    evaluation: 28
 }

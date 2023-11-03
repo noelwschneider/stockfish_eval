@@ -13,7 +13,7 @@ export default function Board() {
     const boardToRender = formatBoardToRender(position);
 
     return (
-        <Grid container columns={8}>
+        <Grid container item xs={8}>
             {boardToRender.map((rank, rankIndex) => (
                 <Rank key={rankIndex} rank={rank} rankIndex={rankIndex} />
             ))}
