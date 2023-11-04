@@ -1,1 +1,4 @@
 /* Import MUI */
+html, body {
+    background-color: gray;
+}

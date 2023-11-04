@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
 
-import { Grid, Typography } from '@mui/material';
-
+import { Grid } from '@mui/material';
 
 
 export default function Stats() {
     const position = useSelector(store => store.position)
+
 
     return (
         <Grid container item xs={4}>

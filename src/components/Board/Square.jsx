@@ -1,7 +1,6 @@
 import { Grid } from '@mui/material';
 
 import { useSelector } from "react-redux";
-import { useRef } from 'react';
 
 import P from "../../images/pieces/pawn_w.svg"
 import p from "../../images/pieces/pawn_b.svg"

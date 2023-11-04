@@ -1,19 +1,14 @@
 import { put, takeLatest } from 'redux-saga/effects';
 
 import fenToPosition from "../../utilities/fenToPosition";
-import main_evaluation from '../../utilities/eval_function/main_evaluation';
+import getEvaluation from "../../utilities/getEvaluation";
 
 
 function* makePosition(action) {
     try {
-        const positionObject = yield fenToPosition(action.payload);
-        
-        positionObject.evaluation = main_evaluation(positionObject);
-        
-        yield put({type: "SET_POSITION", payload: positionObject});
-
-        yield put({type: "GET_EVALUATION", payload: positionObject});
-
+        const position = yield fenToPosition(action.payload);
+        position.evaluation = getEvaluation(position);
+        yield put({type: "SET_POSITION", payload: position});
     } catch (error) {
         console.log('error in makePosition:', error);
     }
