@@ -6,7 +6,7 @@ const pool = require('../modules/pool')
 router.get('/', (req, res) => {
     const queryText = `
         SELECT * FROM "example"
-        ORDER BY "integer" DESC, "id" ASC
+        ORDER BY "integer" DESC, "id" ASC;
         `
     
     pool.query(queryText)
@@ -30,7 +30,7 @@ router.put('/:id', (req, res) => {
     const queryText = `
         UPDATE "example_table" 
         SET "number" = "number" + 1
-        WHERE "id" = $1
+        WHERE "id" = $1;
     `
     
    pool.query(queryText, [queryValues])

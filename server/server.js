@@ -20,5 +20,5 @@ app.use(express.static('build'));
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT,  () => {
-    console.log('Listening on port: ', PORT);
+    console.log('Listening on port:', PORT);
 });
