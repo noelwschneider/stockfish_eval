@@ -25,7 +25,7 @@ export default function scale_factor(pos, eg) {
     let pawnCountBlack = pawn_count(pos_b);
     let queenCountWhite = queen_count(pos_w);
     let queenCountBlack = queen_count(pos_b);
-    let bishopCountWhite = bishop_count(pos_w)
+    let bishopCountWhite = bishop_count(pos_w);
     let bishopCountBlack = bishop_count(pos_b);
     let knightCountWhite = knight_count(pos_w);
     let knightCountBlack = knight_count(pos_b);
