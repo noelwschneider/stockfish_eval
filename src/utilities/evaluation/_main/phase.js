@@ -1,5 +1,5 @@
-import colorflip from "./global/colorflip";
-import non_pawn_material from "./material/non_pawn_material";
+import colorflip from "../global/colorflip";
+import non_pawn_material from "../material/non_pawn_material";
 
 
 export default function phase(pos) {

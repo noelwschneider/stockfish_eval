@@ -1,6 +1,6 @@
 import bishop_xray_attack from "../attack/bishop_xray_attack";
 import board from "../global/board";
-import king_attackers_count from "../king/king_attackers_count"
+import king_attackers_count from "./king_attackers_count"
 import knight_attack from "../attack/knight_attack";
 import queen_attack from "../attack/queen_attack";
 import rook_xray_attack from "../attack/rook_xray_attack";

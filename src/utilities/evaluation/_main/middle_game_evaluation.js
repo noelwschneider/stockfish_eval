@@ -1,15 +1,15 @@
-import colorflip from "./global/colorflip";
-import imbalance_total from "./imbalance/imbalance_total";
-import king_mg from "./king/king_mg";
-import mobility_mg from "./mobility/mobility_mg";
-import passed_mg from "./passed_pawns/passed_mg";
-import pawns_mg from "./pawns/pawns_mg";
-import pieces_mg from "./pieces/pieces_mg";
-import piece_value_mg from "./material/piece_value_mg";
-import psqt_mg from "./material/psqt_mg";
-import space from "./winnable/winnable";
-import threats_mg from "./threat/threats_mg";
-import winnable_total_mg from "./winnable/winnable_total_mg";
+import colorflip from "../global/colorflip";
+import imbalance_total from "../imbalance/imbalance_total";
+import king_mg from "../king/king_mg";
+import mobility_mg from "../mobility/mobility_mg";
+import passed_mg from "../passed_pawns/passed_mg";
+import pawns_mg from "../pawns/pawns_mg";
+import pieces_mg from "../pieces/pieces_mg";
+import piece_value_mg from "../material/piece_value_mg";
+import psqt_mg from "../material/psqt_mg";
+import space from "../winnable/winnable";
+import threats_mg from "../threat/threats_mg";
+import winnable_total_mg from "../winnable/winnable_total_mg";
 
 
 export default function middle_game_evaluation(pos, nowinnable) {

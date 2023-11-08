@@ -1,14 +1,14 @@
-import bishop_count from "./helpers/bishop_count"
-import board from "./global/board";
-import candidate_passed from "./passed_pawns/candidate_passed";
-import colorflip from "./global/colorflip";
+import bishop_count from "../helpers/bishop_count"
+import board from "../global/board";
+import candidate_passed from "../passed_pawns/candidate_passed";
+import colorflip from "../global/colorflip";
 import end_game_evaluation from "./end_game_evaluation";
-import knight_count from "./helpers/knight_count"
-import non_pawn_material from "./material/non_pawn_material";
-import opposite_bishops from "./helpers/opposite_bishops";
-import pawn_count from "./helpers/pawn_count";
-import piece_count from "./helpers/piece_count";
-import queen_count from "./helpers/queen_count";
+import knight_count from "../helpers/knight_count"
+import non_pawn_material from "../material/non_pawn_material";
+import opposite_bishops from "../helpers/opposite_bishops";
+import pawn_count from "../helpers/pawn_count";
+import piece_count from "../helpers/piece_count";
+import queen_count from "../helpers/queen_count";
 
 
 
