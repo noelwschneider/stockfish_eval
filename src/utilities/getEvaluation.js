@@ -1,35 +1,35 @@
 // Universal eval functions
-import main_evaluation from '../../utilities/eval_function/main_evaluation';
-import phase from '../../utilities/eval_function/phase';
-import scale_factor from '../../utilities/eval_function/scale_factor';
-import tempo from '../../utilities/eval_function/tempo';
-import imbalance_total from '../../utilities/eval_function/imbalance/imbalance_total';
-import space from '../../utilities/eval_function/winnable/winnable';
-import colorflip from '../../utilities/eval_function/global/colorflip';
+import main_evaluation from './eval_function/main_evaluation';
+import phase from './eval_function/phase';
+import scale_factor from './eval_function/scale_factor';
+import tempo from './eval_function/tempo';
+import imbalance_total from './eval_function/imbalance/imbalance_total';
+import space from './eval_function/winnable/winnable';
+import colorflip from './eval_function/global/colorflip';
 
 // Middlegame eval functions
-import middle_game_evaluation from '../../utilities/eval_function/middle_game_evaluation';
-import piece_value_mg from '../../utilities/eval_function/material/piece_value_mg';
-import psqt_mg from '../../utilities/eval_function/material/psqt_mg';
-import pawns_mg from '../../utilities/eval_function/pawns/pawns_mg';
-import mobility_mg from '../../utilities/eval_function/mobility/mobility';
-import threats_mg from '../../utilities/eval_function/threat/threats_mg';
-import passed_mg from '../../utilities/eval_function/passed_pawns/passed_mg';
-import king_mg from '../../utilities/eval_function/king/king_mg';
-import winnable_total_mg from '../../utilities/eval_function/winnable/winnable_total_mg';
+import middle_game_evaluation from './eval_function/middle_game_evaluation';
+import piece_value_mg from './eval_function/material/piece_value_mg';
+import psqt_mg from './eval_function/material/psqt_mg';
+import pawns_mg from './eval_function/pawns/pawns_mg';
+import mobility_mg from './eval_function/mobility/mobility';
+import threats_mg from './eval_function/threat/threats_mg';
+import passed_mg from './eval_function/passed_pawns/passed_mg';
+import king_mg from './eval_function/king/king_mg';
+import winnable_total_mg from './eval_function/winnable/winnable_total_mg';
 
 // Endgame eval functions
-import end_game_evaluation from '../../utilities/eval_function/end_game_evaluation';
-import king_eg from "../../utilities/eval_function/king/king_eg";
-import mobility_eg from "../../utilities/eval_function/mobility/mobility_eg";
-import passed_eg from "../../utilities/eval_function/passed_pawns/passed_eg";
-import pawns_eg from "../../utilities/eval_function/pawns/pawns_eg";
-import pieces_eg from "../../utilities/eval_function/pieces/pieces_eg";
-import piece_value_eg from "../../utilities/eval_function/material/piece_value_eg";
-import psqt_eg from "../../utilities/eval_function/material/psqt_eg";
-import threats_eg from "../../utilities/eval_function/threat/threats_eg";
-import winnable_total_eg from "../../utilities/eval_function/winnable/winnable_total_eg";
-import pieces_mg from '../../utilities/eval_function/pieces/pieces_mg';
+import end_game_evaluation from './eval_function/end_game_evaluation';
+import king_eg from "./eval_function/king/king_eg";
+import mobility_eg from "./eval_function/mobility/mobility_eg";
+import passed_eg from "./eval_function/passed_pawns/passed_eg";
+import pawns_eg from "./eval_function/pawns/pawns_eg";
+import pieces_eg from "./eval_function/pieces/pieces_eg";
+import piece_value_eg from "./eval_function/material/piece_value_eg";
+import psqt_eg from "./eval_function/material/psqt_eg";
+import threats_eg from "./eval_function/threat/threats_eg";
+import winnable_total_eg from "./eval_function/winnable/winnable_total_eg";
+import pieces_mg from './eval_function/pieces/pieces_mg';
 
 
 export default function getEvaluation(position) {
@@ -37,18 +37,17 @@ export default function getEvaluation(position) {
     const black = colorflip(position);
 
     const positionStats = {
-        evaluation: {
-            main: main_evaluation(white),
-            mg: middle_game_evaluation(white),
-            eg: end_game_evaluation(white)
+        value: {
+            main: main_evaluation(position),
+            mg: middle_game_evaluation(position),
+            eg: end_game_evaluation(position)
         },
+        phase: phase(position),
+        tempo: tempo(position),
+        imbalance: imbalance_total(position),
+        scaleFactor: scale_factor(position, end_game_evaluation(position)),
 
-        imbalance: imbalance_total(white),
-
-        white: {
-            phase: phase(white),
-            scaleFactor: scale_factor(position, end_game_evaluation(white)),
-            tempo: tempo(white),
+        whiteStats: {     
             space: space(white),
 
             material: {
@@ -99,10 +98,7 @@ export default function getEvaluation(position) {
             }
         },
 
-        black: {
-            phase: phase(black),
-            scaleFactor: scale_factor(position, end_game_evaluation(black)),
-            tempo: tempo(black),
+        blackStats: {
             space: space(black),
 
             material: {

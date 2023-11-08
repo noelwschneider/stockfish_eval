@@ -1,3 +1,6 @@
+import getEvaluation from "../../utilities/getEvaluation";
+
+
 export default function position (state = startingPosition, action) {
     switch(action.type) {
         case 'SET_POSITION':
@@ -6,7 +9,6 @@ export default function position (state = startingPosition, action) {
             return state;
     }
 }
-
 
 const startingPosition = {
     // chessboard
@@ -30,6 +32,5 @@ const startingPosition = {
 
     // move counts
     moveCounters: [0, 1],
-
-    evaluation: 28
 }
+startingPosition.evaluation = getEvaluation(startingPosition);
